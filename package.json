@@ -1,0 +1,22 @@
+{
+  "name": "praha-challenge-subject5-2",
+  "version": "1.0.0",
+  "description": "subject 5",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NiiyaDaiki/praha-challenge-subject5-2.git"
+  },
+  "author": "daiki.niiya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NiiyaDaiki/praha-challenge-subject5-2/issues"
+  },
+  "homepage": "https://github.com/NiiyaDaiki/praha-challenge-subject5-2#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
