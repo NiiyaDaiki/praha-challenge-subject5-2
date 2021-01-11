@@ -4,6 +4,7 @@
   "description": "subject 5",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/NiiyaDaiki/praha-challenge-subject5-2#readme",
   "dependencies": {
+    "eslint": "^7.17.0",
     "express": "^4.17.1"
   }
 }

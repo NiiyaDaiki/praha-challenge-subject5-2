@@ -1,25 +1,24 @@
-// package.jsonのscriptsに"start": "node app.js"を加えて
-// npm startでサーバーを立ち上げると、ターミナルにconsole.logで出力できる
-
-// expressの読み込み
 const express = require("express");
 const app = express();
 
-// URLエンコードされたデータをquerystringライブラリ(falseの場合)とqsライブラリ(trueの場合)のどちらで解析するかを選択することができる。
-// qsライブラリでは、リッチオブジェクトや配列をURLエンコードされた形式にエンコードすることができ、URLエンコードされたJSONのようになる。
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+/**
+ * TODO: static利用時のクッキー設定方法
+ * staticを利用した時、クッキーの設定方法をどうすれば良いかわからない。
+ * ルーティングをしなくても良くなってしまうので、クッキーをセットする処理をどこに書けば良いかわからない。
+ * app.use(express.static(__dirname + '/public'));
+ */
 
 // port番号
-const port = 8088;
+const port = 8081;
 // サーバー起動
 app.listen(port);
 
 // ルーティング
-// get用
-app.get("/", (req, res) => {
-    const data = {
-        text: "hello world"
-    };
-    res.status(200).json(data);
+// 埋め込む用のページを返す。
+app.get("/index2", (req, res) => {
+    // クッキーの設定
+    res.cookie('5-2', 'value2', {
+        httpOnly: true
+    })
+    res.sendFile(__dirname + '/public/index2.html');
 });
