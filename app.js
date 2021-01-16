@@ -14,10 +14,12 @@ const port = 8081;
 app.listen(port);
 
 // ルーティング
-// 埋め込む用のページを返す。
+// 埋め込む用のページを返す。オリジン間でもクッキーの送信を許可するためにsameSite属性とsecure属性を付与する。
 app.get("/index2", (req, res) => {
     // クッキーの設定
     res.cookie('5-2', 'value2', {
+        sameSite: 'none',
+        secure: 'true',
         httpOnly: true
     })
     res.sendFile(__dirname + '/public/index2.html');
